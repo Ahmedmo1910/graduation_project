@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Optivio.Shared.DTOs.Cart
+{
+    public class CartItemDto
+    {
+        public int Id { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; } = null!;
+        public string ThumbnailUrl { get; set; } = null!;
+        public decimal Price { get; set; }
+        public string Currency { get; set; } = null!;
+        public int Quantity { get; set; }
+        public decimal TotalPrice => Price * Quantity;
+    }
+}
