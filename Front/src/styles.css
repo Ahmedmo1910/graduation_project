@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "flowbite/src/themes/default";
+@import "ngx-toastr/toastr";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@theme {
+  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-fade-in-fast: fade-in 0.5s ease-out both;
+  --animate-fade-in-quick: fade-in 0.3s ease-out both;
+  --animate-scan-laser: scan-laser 2s ease-in-out infinite;
+  --animate-pulse-mesh: pulse-mesh 2s ease-in-out infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scan-laser {
+    0% {
+      top: 0%;
+      opacity: 0.6;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes pulse-mesh {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+}
+.main-text {
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #441752;
+  margin-bottom: 26px;
+}
+/* for angular material */
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+router-outlet + * {
+  flex: 1;
+}
